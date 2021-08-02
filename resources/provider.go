@@ -15,7 +15,7 @@ import (
 func Provider() *provider.Provider {
 	return &provider.Provider{
 		Name:    "test",
-		Version: "v0.0.0",
+		Version: "v0.0.3",
 		Configure: func(logger hclog.Logger, i interface{}) (schema.ClientMeta, error) {
 			return &client.TestClient{L: logger}, nil
 		},

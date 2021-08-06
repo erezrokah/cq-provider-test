@@ -15,7 +15,7 @@ import (
 func Provider() *provider.Provider {
 	return &provider.Provider{
 		Name:    "test",
-		Version: "v0.0.3",
+		Version: "v0.0.4",
 		Configure: func(logger hclog.Logger, i interface{}) (schema.ClientMeta, error) {
 			return &client.TestClient{L: logger}, nil
 		},
@@ -39,7 +39,7 @@ func Provider() *provider.Provider {
 				},
 			},
 			"very_slow_resource": {
-				Name: "slow_resource",
+				Name: "very_slow_resource",
 				Resolver: func(ctx context.Context, meta schema.ClientMeta, parent *schema.Resource, res chan interface{}) error {
 					meta.Logger().Info("fetching very slow")
 					select {

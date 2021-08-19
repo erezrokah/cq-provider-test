@@ -19,7 +19,7 @@ var migrations embed.FS
 func Provider() *provider.Provider {
 	return &provider.Provider{
 		Name:       "test",
-		Version:    "v0.0.5",
+		Version:    "v0.0.6",
 		Migrations: migrations,
 		Configure: func(logger hclog.Logger, i interface{}) (schema.ClientMeta, error) {
 			return &client.TestClient{L: logger}, nil
